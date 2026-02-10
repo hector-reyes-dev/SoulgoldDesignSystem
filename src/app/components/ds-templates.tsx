@@ -5,6 +5,15 @@ import {
   ArrowRight, Instagram, Minus, Plus, ChevronDown, SlidersHorizontal, X, Check
 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+// Import Figma Moodboard images
+import imgImage1 from "figma:asset/d70cda1bbd50def02e504276383a12ac8679d7b5.png";
+import img202602071312541 from "figma:asset/1dac8d01e5076a3483476cd1bcc39280b20e7754.png";
+import imgImage2 from "figma:asset/aec10fca6ac34e80baf3049c7b7262e5ff1d624f.png";
+import imgImage3 from "figma:asset/4530671a011883b58561beeb6031e2f57ed9479e.png";
+import imgImage4 from "figma:asset/118d2281096a5d2299b32c55e83fba950c1277fc.png";
+import imgImage5 from "figma:asset/5892133f17b4c4aca56cab7b574832cd03e2bbec.png";
+import imgImage6 from "figma:asset/cdb614dcd504056b83c839a575db772634a31e22.png";
+import imgImage7 from "figma:asset/3f404778bc6138310b140fe70c947d1602c0746c.png";
 
 /* ─── Home-specific image URLs ─── */
 const homeImages = {
@@ -19,6 +28,18 @@ const homeImages = {
   artisanDetail: "https://images.unsplash.com/photo-1679019937997-2272d4a840ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb2xkJTIwY2hhaW4lMjBicmFjZWxldCUyMGRldGFpbCUyMGFydGlzYW58ZW58MXx8fHwxNzcwNDk0Njc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   summer: "https://images.unsplash.com/photo-1765584830117-166fecd1eb0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGFjY2Vzc29yaWVzJTIwZ29sZCUyMHN1bW1lciUyMG91dGRvb3J8ZW58MXx8fHwxNzcwNDk0Njc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
   giftBox: "https://images.unsplash.com/photo-1759563874745-47e35c0a9572?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqZXdlbHJ5JTIwZ2lmdCUyMGJveCUyMHBhY2thZ2luZyUyMGVsZWdhbnR8ZW58MXx8fHwxNzcwNDk0Njc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+};
+
+// Figma Moodboard images for authentic Soul&Gold aesthetics
+const moodboardImages = {
+  hero: imgImage1,
+  heroAlt: img202602071312541,
+  lifestyle1: imgImage2,
+  lifestyle2: imgImage3,
+  jewelry1: imgImage4,
+  jewelry2: imgImage5,
+  jewelry3: imgImage6,
+  jewelry4: imgImage7,
 };
 
 /* ─── Section Wrapper ─── */
@@ -136,7 +157,7 @@ function HomeTemplate({ images }: { images: Record<string, string> }) {
               </div>
             </div>
             <div className="relative aspect-[4/5] lg:aspect-auto overflow-hidden order-1 lg:order-2">
-              <ImageWithFallback src={homeImages.hero} alt="Mujer con joyeria dorada" className="w-full h-full object-cover" />
+              <img src={moodboardImages.hero} alt="Mujer con joyeria dorada" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--sg-bone)] via-transparent to-transparent lg:hidden opacity-40" />
             </div>
           </div>
@@ -146,7 +167,7 @@ function HomeTemplate({ images }: { images: Record<string, string> }) {
         <div style={{ backgroundColor: "var(--sg-surface)" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2" style={{ backgroundColor: "var(--sg-beige)" }}>
             <div className="aspect-[4/3] lg:aspect-auto overflow-hidden">
-              <ImageWithFallback src={homeImages.collection} alt="Coleccion Atardecer Dorado" className="w-full h-full object-cover" />
+              <img src={moodboardImages.lifestyle1} alt="Coleccion Atardecer Dorado" className="w-full h-full object-cover" />
             </div>
             <div className="p-8 lg:p-16 flex flex-col justify-center">
               <p className="text-xs mb-3" style={{ fontFamily: "var(--font-sans)", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--sg-gold-dark)" }}>
@@ -166,14 +187,14 @@ function HomeTemplate({ images }: { images: Record<string, string> }) {
           <div className="px-6 lg:px-10 py-12">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
               {[
-                { name: "Collar Otomana", price: "$890", img: homeImages.pendant, badge: "Nuevo" },
-                { name: "Aretes Medialuna", price: "$520", img: homeImages.catEarrings },
-                { name: "Pulsera Cadena Sol", price: "$680", img: homeImages.artisanDetail },
-                { name: "Anillo Atardecer", price: "$420", img: homeImages.catRings },
+                { name: "Collar Otomana", price: "$890", img: moodboardImages.jewelry1, badge: "Nuevo" },
+                { name: "Aretes Medialuna", price: "$520", img: moodboardImages.jewelry2 },
+                { name: "Pulsera Cadena Sol", price: "$680", img: moodboardImages.jewelry3 },
+                { name: "Anillo Atardecer", price: "$420", img: moodboardImages.jewelry4 },
               ].map(p => (
                 <div key={p.name} className="group">
                   <div className="relative aspect-[3/4] rounded-lg overflow-hidden mb-3" style={{ backgroundColor: "var(--sg-bone)" }}>
-                    <ImageWithFallback src={p.img} alt={p.name} className="w-full h-full object-cover" />
+                    <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
                     {p.badge && (
                       <span className="absolute top-3 left-3 px-2.5 py-1 text-[10px] uppercase" style={{ fontFamily: "var(--font-sans)", fontWeight: 600, letterSpacing: "0.08em", backgroundColor: "var(--sg-black)", color: "var(--sg-white)", borderRadius: "2px" }}>
                         {p.badge}
@@ -246,14 +267,14 @@ function HomeTemplate({ images }: { images: Record<string, string> }) {
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              { name: "Collares", count: "48 piezas", img: homeImages.catNecklaces },
-              { name: "Aretes", count: "36 piezas", img: homeImages.catEarrings },
-              { name: "Pulseras", count: "28 piezas", img: homeImages.catBracelets },
-              { name: "Anillos", count: "22 piezas", img: homeImages.catRings },
+              { name: "Collares", count: "48 piezas", img: moodboardImages.jewelry1 },
+              { name: "Aretes", count: "36 piezas", img: moodboardImages.jewelry2 },
+              { name: "Pulseras", count: "28 piezas", img: moodboardImages.jewelry3 },
+              { name: "Anillos", count: "22 piezas", img: moodboardImages.jewelry4 },
             ].map(cat => (
               <div key={cat.name} className="group cursor-pointer">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden mb-3">
-                  <ImageWithFallback src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.375rem", fontWeight: 500, color: "var(--sg-white)" }}>{cat.name}</h3>
@@ -307,9 +328,9 @@ function HomeTemplate({ images }: { images: Record<string, string> }) {
             </button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 lg:gap-3">
-            {[homeImages.hero, homeImages.catNecklaces, homeImages.collection, homeImages.summer, homeImages.catEarrings, homeImages.giftBox].map((img, i) => (
+            {[moodboardImages.hero, moodboardImages.jewelry1, moodboardImages.lifestyle1, moodboardImages.jewelry2, moodboardImages.jewelry3, moodboardImages.lifestyle2].map((img, i) => (
               <div key={i} className="aspect-square rounded-lg overflow-hidden group cursor-pointer relative">
-                <ImageWithFallback src={img} alt={`Instagram post ${i + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img} alt={`Instagram post ${i + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
                   <Instagram size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "var(--sg-white)" }} />
                 </div>

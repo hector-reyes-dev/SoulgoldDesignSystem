@@ -26,7 +26,7 @@ const pages = [
     label: "02 — Patterns",
     icon: <LayoutGrid size={16} strokeWidth={1.5} />,
   },
-  /*  { id: "templates", label: "03 — Templates", icon: <FileText size={16} strokeWidth={1.5} /> },*/
+  { id: "templates", label: "03 — Templates", icon: <FileText size={16} strokeWidth={1.5} /> },
 ];
 
 const images = {
